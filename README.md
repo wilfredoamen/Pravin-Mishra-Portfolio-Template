@@ -40,3 +40,19 @@ Add this line (example):
 ```
 
 ✅ This proof must be visible in your browser screenshot submission.
+
+## Footer Deployment Date
+
+The footer displays a dynamic deployment date instead of a hard-coded value.
+The date is generated at runtime using vanilla JavaScript and formatted as DD Mon YYYY.
+
+**Snippet**
+```html 
+<p>Deployed on <span id="deployDate"></span></p>
+
+<script>
+  document.getElementById('deployDate').textContent =
+    new Date().toLocaleDateString('en-GB',
+      { day: '2-digit', month: 'short', year: 'numeric' });
+</script>
+```
